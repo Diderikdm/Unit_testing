@@ -6,7 +6,7 @@ class TestClassOne(unittest.TestCase):
 
     def test_correct(self):
 
-        from _massarius.caching_tools.caching_tools import get_path_for_airflow_cache
+        from <<path.to.module>>.caching_tools.caching_tools import get_path_for_airflow_cache
 
         path_to_verify = Path.home() / "gcs/data/cache"
 
@@ -17,7 +17,7 @@ class TestClassOne(unittest.TestCase):
 
     def test_false(self):
 
-        from _massarius.caching_tools.caching_tools import get_path_for_airflow_cache
+        from <<path.to.module>>.caching_tools.caching_tools import get_path_for_airflow_cache
         
         path_to_verify = "/wrong/path"
 
