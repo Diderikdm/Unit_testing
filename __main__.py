@@ -5,7 +5,7 @@ from _massarius.unittesting import (
     test_unit_testing_three
 )
 
-
+# Example usage
 def main():
     test_unit_tests([
         test_unit_testing_one,
