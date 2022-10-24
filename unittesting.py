@@ -71,9 +71,9 @@ def test_unit_tests(test_modules: Union[ModuleType, list],
 
                 
         if not failed_tests:
-            logging.warn(f"All unit tests for {test_module.__name__} passed.\n")
+            logging.warn(f"All {len(test_functions)} unit tests for {test_module.__name__} passed.\n")
         else:
-            logging.warn(get_fail_message_for_unit_test(failed_tests, test_module))
+            logging.warn(get_fail_message_for_unit_test(failed_tests, test_module, len(test_functions)))
 
     #print a warn message in the log or returns a list of errors
     names_of_tested_modules = [test_module.__name__ for test_module in test_modules]
@@ -90,14 +90,14 @@ def test_unit_tests(test_modules: Union[ModuleType, list],
         return failed_tests_to_return
 
 
-def get_fail_message_for_unit_test(failed_tests, test_module):
+def get_fail_message_for_unit_test(failed_tests, test_module, total_tests):
 
-    message = f"{len(failed_tests)} unit test{'s' if len(failed_tests) > 1 else ''} for"
+    message = f"{len(failed_tests)} unit test{'s' if len(failed_tests) > 1 else ''} out of {total_tests} for"
 
     message += f"{test_module.__name__} did not pass: {[test_name for test_name in failed_tests]}\n"
 
     return message
-
+  
 
 def get_fail_message_for_all_unit_tests(failed_tests, names_of_tests):
 
