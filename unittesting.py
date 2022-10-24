@@ -92,7 +92,7 @@ def test_unit_tests(test_modules: Union[ModuleType, list],
 
 def get_fail_message_for_unit_test(failed_tests, test_module, total_tests):
 
-    message = f"{len(failed_tests)} unit test{'s' if len(failed_tests) > 1 else ''} out of {total_tests} for"
+    message = f"{len(failed_tests)} unit test{'s' if len(failed_tests) > 1 else ''} out of {total_tests} for "
 
     message += f"{test_module.__name__} did not pass: {[test_name for test_name in failed_tests]}\n"
 
